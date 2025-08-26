@@ -1,0 +1,40 @@
+{{ if .IsNamedParams }}
+  {{/*  {{ $.Scratch.Set "icon" (default "triangle-exclamation" (.Get "icon") ) }}  */}}
+  {{ $.Scratch.Set "cardColor" (.Get "cardColor") }}
+  {{ $.Scratch.Set "buttonColor" (.Get "buttonColor") }}
+  {{ $.Scratch.Set "highlightColor" (.Get "highlightColor") }}
+  {{ $.Scratch.Set "textColor" (.Get "textColor") }}
+{{ end }}
+
+
+<style>
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Bootstrap blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+
+<style>
+  .custom-section {
+    background-color: "{{ $.Scratch.Get "cardColor" }};"/* light gray background */
+    padding: 40px;
+    border-radius: 15px; /* 👈 This creates the rounded corners */
+    color: white;
+    /* text-align: center; */
+  }
+</style>
+
+<section class="custom-section">
+  <a href="https://quietlantern.itch.io/snake" target="_blank" class="button"> Click here </a> &nbsp;  to play the game it on itch.io (best experience)
+</section>
+
+
